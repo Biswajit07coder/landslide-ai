@@ -1,0 +1,13 @@
+# Environment and credentials
+.env/
+
+# Python
+__pycache__/
+*.pyc
+
+# SQLite DB
+backend/app.db
+
+# Virtual environments
+.venv/
+env/
