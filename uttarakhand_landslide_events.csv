@@ -1,0 +1,184 @@
+event_id,event_date,latitude,longitude,landslide_trigger,landslide_size,fatality_count,location_description
+3669,06/29/2011 12:00:00 AM,30.7666,78.7963,downpour,medium,0,"National Highway leading to Gangotri, from Dehradun"
+3750,07/09/2011 12:00:00 AM,30.7652,78.5925,downpour,medium,0,Gangotri
+3751,07/09/2011 12:00:00 AM,30.7331,79.0685,downpour,medium,0,Kedarnath
+3752,07/09/2011 12:00:00 AM,31.0188,78.4129,downpour,medium,0,Yamunotri
+3821,07/21/2011 12:00:00 AM,29.7334,79.6367,rain,medium,1,"Kumaon, Uttarakhand"
+3819,07/21/2011 12:00:00 AM,30.4043,79.3318,rain,medium,1,"Chamoli , Uttarakhand"
+4929,06/16/2013 12:00:00 AM,30.4954,78.3881,rain,medium,0,"Rishikesh-Joshimath-Mana Road, Uttarakhand"
+4930,06/16/2013 12:00:00 AM,30.885,78.6695,rain,medium,0,"Dharasu-Gangotri Road, Uttarakhand"
+4931,06/16/2013 12:00:00 AM,29.7986,80.417,rain,medium,0,"Pithoragarh-Ghatiabgarh Road, Uttarakhand"
+1097,08/17/2009 06:00:00 PM,29.4085,80.1327,continuous_rain,medium,0,Pithoragarh district
+4928,06/16/2013 12:00:00 AM,30.4619,79.0765,rain,medium,0,"Rudraprayag-Gaurikund Road, Uttarakhand"
+4445,07/05/2012 12:00:00 AM,30.1281,78.3221,downpour,large,1,"Badrinath Rd,  Rishikesh, Uttarakhand"
+5225,07/28/2013 12:00:00 AM,30.819,78.6149,downpour,small,1,"Bhatwari Area Of Uttarkashi Districti, Uttarakhand"
+2241,08/13/2010 12:00:00 AM,30.80200029,78.61786282,downpour,medium,,"Gangotree national highway near Bhatvaree, Uttarkashi district"
+5208,07/26/2013 12:00:00 AM,30.2835,79.2498,rain,medium,,Rishikesh-Badrinath Highway Near Kaleshwar
+7084,07/06/2015 12:00:00 AM,29.393,79.4525,downpour,medium,0,"Mall Rd, Nainital"
+3905,08/10/2011 12:00:00 AM,30.2828,78.3041,rain,medium,0,Chardham yatra
+3749,07/09/2011 12:00:00 AM,30.7412,79.4929,downpour,medium,0,Badrinath
+8367,06/30/2016 10:00:00 PM,29.8002,80.2565,monsoon,large,0,"Didihat, Uttarakhand, India"
+9166,07/18/2016 12:00:00 AM,30.7313,78.4358,rain,medium,,"Gangotri Highway near Helgugad, Uttarkashi, Uttarakhand, India"
+2379,09/03/2010 12:00:00 AM,30.2851,78.9829,downpour,medium,0,"Rudraprayag, Rishikesh-Badrinath hwy"
+2391,09/04/2010 12:00:00 AM,30.8987,78.3399,downpour,medium,0,"Ranachatti(?), on road to Yamunotri"
+2416,09/12/2010 12:00:00 AM,30.7333,78.4403,downpour,medium,0,"Uttarkashi town, Uttarakhand"
+2161,07/29/2010 12:00:00 AM,30.7467,78.4517,downpour,medium,0,
+5285,08/05/2013 12:00:00 AM,29.5659,80.3657,monsoon,medium,1,"Jhulaghat Area Of Pithoragarh District, Uttarakhand"
+7159,07/10/2015 12:00:00 AM,29.3908,79.4552,continuous_rain,medium,0,"Baliyanala, Nainithal"
+5179,07/24/2013 12:00:00 AM,30.262,79.2191,downpour,medium,0,"Karnaprayag, Uttarakhand"
+3899,08/08/2011 12:00:00 AM,30.2258,78.3755,downpour,medium,0,"Chhatanga area; Helkugad; and Netala, all on the Rishikesh-Yamunotri National Highway"
+2120,07/22/2010 12:00:00 AM,29.6095,79.6628,downpour,medium,1,"Patlot-Aghora road, Almora District "
+2454,09/19/2010 06:00:00 PM,30.9013,79.5322,downpour,medium,2,"near Mt. Kamet and Ghastoli village, near Mana pass, Chamoli district, Uttarakhand"
+7161,07/11/2015 12:00:00 AM,30.241,78.9,continuous_rain,medium,0,Sirobagad area of Rudraprayag
+5410,08/28/2013 06:00:00 PM,29.9531,78.1514,downpour,medium,0,Haridwar In Uttarakhand Province
+4978,06/24/2013 12:00:00 AM,30.4542,78.3911,downpour,medium,0,"Rishikesh-Uttarkashi Route, Uttarakhand"
+3759,07/11/2011 12:00:00 AM,30.506,79.1127,downpour,medium,0,Highways leading to Badrinath and Gangotri
+237,09/06/2007 12:00:00 AM,29.5833,80.2167,rain,large,,Pithoragarh
+2293,08/20/2010 12:00:00 AM,30.7221,78.6437,downpour,medium,0,"Nalupani(?), Rishikesh-Gangotri highway, Uttarkhand"
+7111,04/28/2015 12:00:00 AM,30.5631,79.5765,continuous_rain,small,0,"Vishnuprayag, Joshimath"
+5023,07/04/2013 12:00:00 AM,30.0712,80.2386,continuous_rain,medium,,"Munsari Tehsil, Uttarakhand"
+5197,07/25/2013 12:00:00 AM,30.8203,78.6185,continuous_rain,medium,,"Ganga Vihar Colony In Bhatwadi Area, Uttarkashi, Uttarakhand"
+3820,07/21/2011 12:00:00 AM,30.1665,78.1123,rain,medium,1,"Garhwal, Uttarakhand"
+9002,07/16/2016 03:00:00 PM,30.4554,78.0973,downpour,medium,0,"Mussoorie-Tehri bypass, near Landour, Uttarakhand, India"
+3559,05/31/2011 06:00:00 PM,30.4783,78.2741,rain,medium,1,"Chhatanga(?) village on Rishikesh-Yamunotri highway, Uttarkashi "
+6341,09/11/2014 12:00:00 AM,30.688,79.0478,downpour,medium,0,Gaurikund-Kedarnath pedestrian trek
+2227,08/09/2010 12:00:00 AM,30.6463,79.5306,downpour,medium,0,"Nirgaddu about 4 km from Tapovan on Rishikesh - Badrinath route, Uttarakhand "
+4949,06/18/2013 03:00:00 PM,30.3797,78.5017,rain,medium,0,Road Near Tipri To Kedarnath
+4936,06/17/2013 12:00:00 AM,30.6945,79.0544,downpour,large,13,"Rambara District, Uttarakhand"
+9449,08/04/2016 12:00:00 AM,30.7386,79.4954,continuous_rain,medium,0,Valley of Flowers near Badrinath
+9258,07/31/2016 12:00:00 AM,30.9753,78.4375,continuous_rain,medium,0,"Janki Chatti, Uttarakhand, India"
+5182,07/24/2013 12:00:00 AM,30.301,79.3628,downpour,medium,0,"Thirpak, Uttarakhand"
+4481,08/17/2012 12:00:00 AM,30.6594,79.5605,downpour,medium,4,"Chamoli, Uttarakhand"
+2228,08/09/2010 12:00:00 AM,30.6785,78.3475,downpour,medium,0,"Dharasu and Nalupani near Uttarkashi on Rishikesh – Gangotri highway, Uttarakhand "
+2104,07/20/2010 12:00:00 AM,29.36,80.126,downpour,medium,0,"Tanakupur-Pitoragarh highway, Kumaon(Kumaun) region, Uttarakhand"
+5022,07/04/2013 12:00:00 AM,29.58,80.2214,downpour,medium,,"Pithoragarh Tehsil, Uttarakhand"
+4966,06/19/2013 12:00:00 AM,29.5935,79.6805,rain,medium,0,"Almora, Uttarakhand"
+3746,07/08/2011 12:00:00 AM,30.6509,79.5192,downpour,medium,0,Lambagad
+4551,09/14/2012 12:00:00 AM,29.841,79.7758,downpour,large,9,"Bageshwar, Uttarakhand"
+7012,06/25/2015 12:00:00 AM,30.6838,79.0479,downpour,medium,0,5 km from Kedarnath Temple
+2291,08/20/2010 12:00:00 AM,30.966,78.4151,downpour,medium,0,"Ranachatti(?), route to Yamunotri, Garwhal division, Uttarakhand"
+2478,09/20/2010 12:00:00 AM,30.7332,78.4401,downpour,medium,0,"roads around Uttarkashi, Uttarakhand"
+7273,07/26/2015 12:00:00 AM,30.2411,78.9014,continuous_rain,medium,0,"Sirobagad, Rishikesh-Badrinath highway"
+2458,09/19/2010 12:00:00 AM,30.9015,78.7756,downpour,medium,0,"roads to Gangotri, Uttarakhand"
+5360,08/18/2013 12:00:00 AM,30.3642,79.3158,rain,medium,,"Chamoli District, Uttarakhand"
+1072,08/08/2009 02:00:00 AM,29.5885,80.2098,downpour,large,15,"Bala, Pithoragarh, Uttarakhand (450Km from Deheradun)"
+4914,06/12/2013 10:00:00 PM,30.7394,78.5306,downpour,medium,0,"Rishikesh-Gangotri National Highway Near Mari Sainji Village, Uttarkashi, Uttarakhand"
+7310,08/15/2015 12:00:00 AM,30.9085,78.3299,continuous_rain,medium,0,Yamnotri highway
+3668,06/29/2011 12:00:00 AM,29.607,79.9298,downpour,medium,0,"Almora-Pithoragarh road, between Makrau and Thiari"
+3674,06/29/2011 12:00:00 AM,30.0667,79.0193,downpour,large,10,Several roads in Uttarakhand
+2470,09/19/2010 12:00:00 AM,30.4326,78.0767,downpour,medium,0,"Dehradun-Mussoorie rd, Himachal Pradesh"
+3757,07/10/2011 12:00:00 AM,30.7333,78.4399,downpour,medium,0,Nalupani area in Uttarkashi district
+3900,08/08/2011 12:00:00 AM,30.6521,79.5566,downpour,medium,0,"Govindghat, on the Rishikesh-Badrinath highway"
+5320,08/13/2013 08:00:00 AM,30.6014,78.3449,downpour,medium,2,"Kot Village Of Tehri District, Uttarakhand"
+5130,07/18/2013 12:00:00 AM,30.7314,78.4347,downpour,small,0,"Netali Maneri Marg, Uttarkashi District, Uttarakhand"
+3141,02/23/2011 12:00:00 AM,30.4749,79.2293,downpour,medium,0,"Rishikesh-Badrinath national highway to Rudraprayag, Chamoli, and Badrinath, Uttarakhand"
+3913,08/12/2011 12:00:00 AM,29.9121,78.1723,rain,medium,0,"The Chardham yatra, shrines of Badrinath, Kedarnath, Gangotri, and Yamunotri"
+4975,06/24/2013 10:00:00 PM,30.2524,78.9228,downpour,medium,0,"Sirobhgarh Bend, Srinagar-Rudraprayag Highway, Uttarakhand, Northern India"
+3678,06/30/2011 12:00:00 AM,30.15,78.7753,downpour,medium,0,"Pauri-Safdarkhal road, blocked at Khundadhar"
+2390,09/04/2010 12:00:00 AM,30.796,78.623,downpour,medium,0,"Karmkund(?), on Rishikesh-Gangotri hwy"
+3558,05/31/2011 12:00:00 AM,30.9206,78.3276,rain,medium,0,"road to Yamunotri shrine, Uttarakashi"
+5183,07/24/2013 12:00:00 AM,30.3056,79.3286,downpour,medium,0,"Tefana, Uttarakhand"
+2444,09/18/2010 12:00:00 AM,29.2484,79.5371,downpour,medium,4,"Nainital district, Uttarakhand"
+2202,08/05/2010 08:00:00 AM,30.4068,79.3351,downpour,medium,5,"Basantpur or Gouchar village (two conflicting sources), Chamoli district"
+5224,07/28/2013 12:00:00 AM,29.9964,80.201,downpour,small,1,"Samkot Village Of Pithoragarhi, Uttarakhand"
+2229,08/09/2010 12:00:00 AM,30.5151,78.3684,downpour,medium,0,"Menagarh near Sukki on Rishikesh – Gangotri highway, Uttarakhand "
+2339,08/26/2010 08:00:00 AM,30.365,78.0641,downpour,medium,0,"Matak Mahari(?), near Dehradun, Uttarakhand"
+149,07/30/2007 12:00:00 AM,30.557,79.56,downpour,medium,,Joshimath
+2455,09/19/2010 12:00:00 AM,30.1035,78.4265,downpour,medium,0,"road to Shivpur(Shivpuri), Pauri Garhwal district, Uttarakhand"
+9318,05/23/2016 01:00:00 AM,30.7007,77.8644,rain,small,10,"Chakrata, Uttarakhand, India"
+5088,07/12/2013 12:00:00 AM,29.3802,79.4633,downpour,medium,6,"Lohardobha Billage, Dhari, Nainital"
+5196,07/25/2013 12:00:00 AM,30.8928,78.48,continuous_rain,medium,,"Uttarkashi, Uttarakhand"
+5086,07/12/2013 12:00:00 AM,29.3802,79.4633,rain,medium,6,"Nainital District, Uttarakhand"
+5215,07/27/2013 12:00:00 AM,30.4521,78.754,rain,medium,,Balsori Villages In The Akhrori Area
+5359,08/18/2013 12:00:00 AM,30.742,78.4543,rain,medium,,Rishikesh-Gangotri Highway
+653,07/18/2008 12:00:00 AM,29.33,80.1,rain,medium,14,Sukhidhang area of Champawat district in Uttarakhand 
+3671,06/29/2011 12:00:00 AM,30.81507336,78.2242533,downpour,medium,,National Highway leading to Yamunotri from Dehradun
+5177,07/23/2013 12:00:00 AM,30.2902,79.151,downpour,medium,0,"Gauchar, Chamoli District, Uttarakhand"
+5181,07/24/2013 12:00:00 AM,30.2733,79.233,downpour,medium,,"Rishikesh-Badrinath Highway, Uttarakhand"
+6167,07/20/2014 12:00:00 AM,30.6326,78.9953,continuous_rain,small,3,"Sonprayag, Uttarakhand"
+9314,05/22/2016 03:00:00 PM,30.306,78.0648,rain,small,10,"Chetra Village, Dehradun, India"
+9017,07/17/2016 12:00:00 AM,30.1642,78.2936,downpour,medium,4,"Narendranagar bypass on the Rishikesh-Gangotri national highway,Tehri Garhwal district, Uttarakhand, India"
+2292,08/20/2010 12:00:00 AM,30.8183,78.6186,downpour,medium,0,"Bhatwari, Rishikesh-Gangotri highway, Uttarkhand"
+6510,08/15/2014 12:00:00 AM,30.1176,78.7472,rain,medium,14,Pauri district of Uttarakhand
+5199,07/25/2013 12:00:00 AM,30.7866,78.6171,continuous_rain,medium,0,"Malla, Uttarkashi, Uttarakhand"
+2380,09/03/2010 12:00:00 AM,30.4008,79.0278,downpour,medium,0,"Bhatwari, Rishikesh-Gangotri hwy"
+5184,07/24/2013 12:00:00 AM,30.9058,78.0906,downpour,medium,0,"Sunali, Uttarakhand"
+5129,07/18/2013 12:00:00 AM,30.4043,79.3308,downpour,medium,0,"Chamoli District, Uttarakhand"
+2445,09/18/2010 12:00:00 AM,30.1454,78.6007,downpour,medium,0,"near Devprayag, Rishikesh-Badrinath hwy, "
+7160,07/11/2015 12:00:00 AM,30.3799,78.4862,continuous_rain,medium,0,Badrinath Highway near Mulygoan in Tihri
+4090,12/10/2011 12:00:00 AM,29.913,79.3532,downpour,medium,0,Uttarakhand 
+3914,08/12/2011 12:00:00 AM,28.8665,79.5682,rain,large,11,Uttarakhand and the Uttar Pradesh
+2459,09/19/2010 12:00:00 AM,29.5477,79.3211,downpour,medium,0,"roads to Rani Khet(Ranikhet) and Jolle Kote(?), Uttarakhand"
+7295,07/24/2015 12:00:00 AM,30.4517,78.1443,continuous_rain,small,0,Kempty Road near Sia village
+4487,08/17/2012 12:00:00 AM,30.6179,78.3233,downpour,medium,,"Gangotri-Rishikesh hwy, Uttarakhand (mid-point of road -exact location unknown)"
+5068,07/10/2013 04:30:00 AM,30.3629,79.2143,rain,medium,7,"Bhikona Village, Pokhri Block, Chamoli Village, Uttarakhand"
+4924,06/16/2013 07:30:00 PM,30.7351,79.0666,downpour,very_large,5000,"Kedarnath (Hindu Shrine), Near Kedarnath Dome (Mountain), Uttarakhand"
+9020,07/17/2016 09:00:00 AM,29.9551,78.1677,downpour,medium,0,"Railway tunnel a few kilometres from the Haridwar railway station, between Haridwar and Dehradun, Uttarakhand, India"
+7311,08/15/2015 12:00:00 AM,30.6494,79.5269,continuous_rain,medium,0,Lambagadh
+5024,07/04/2013 12:00:00 AM,30.1719,80.8576,continuous_rain,medium,,"Gunji, Uttarakhand"
+7391,08/01/2015 12:00:00 AM,31.0358,78.8578,continuous_rain,medium,0,Gangotri highway
+7227,07/19/2015 03:00:00 PM,30.0705,80.2364,monsoon,small,1,Sandrathi village of Munsiyari block of Pithoragarh district
+4550,09/14/2012 08:00:00 AM,30.2853,78.9829,downpour,very_large,19,"Rudraprayag, Uttarakhand"
+5611,10/18/2013 09:00:00 AM,30.5345,79.0853,rain,medium,0,"National Highway 109, Uttarakhand"
+5240,07/31/2013 08:00:00 AM,30.3822,78.0949,downpour,medium,4,"Dehradun, Uttarakhand"
+6525,08/18/2014 12:00:00 AM,30.9936,78.4594,downpour,medium,0,Yamunotri route
+2041,07/06/2010 12:00:00 AM,30.2485,78.8847,downpour,medium,0,"highway to Rudraprayag district, Uttarakhand"
+150,07/30/2007 12:00:00 AM,30.4,79.349,downpour,medium,,Chamoli
+173,08/11/2007 12:00:00 AM,30.0702,78.3027,rain,medium,,Rishikesh
+2471,09/19/2010 12:00:00 AM,29.7911,80.058,downpour,medium,0,"roads above Pithoragarh, Uttranchal"
+2453,09/19/2010 06:00:00 PM,29.6131,79.494,downpour,medium,0,"near Chausali village(?), Almora district, Uttarakhand"
+7309,08/15/2015 12:00:00 AM,30.7864,78.616,continuous_rain,medium,0,Malla
+6162,07/19/2014 05:00:00 AM,30.4305,78.0803,rain,small,0,"Mussoorie, Uttarakhand"
+5139,07/19/2013 12:00:00 AM,30.0718,80.2369,downpour,medium,0,"Munsyari Area, Pithoragarh, Uttarakhand"
+146,07/30/2007 12:00:00 AM,30.733,78.439,downpour,medium,2,Uttarkashi district
+5195,07/25/2013 12:00:00 AM,30.4041,79.3276,continuous_rain,medium,,"Alaknanda Valley Of Chamoli District, Uttarakhand"
+2105,07/20/2010 06:00:00 PM,29.3576,79.5519,downpour,medium,1,"Bhimtal area, Naintal district, Uttarakhand"
+6177,07/23/2014 11:30:00 PM,29.1585,79.1464,continuous_rain,small,2,"Bazpur, Uttarakhand"
+6184,07/28/2014 12:00:00 AM,29.5829,80.2182,continuous_rain,medium,7,"Pithauragadh, Uttarakhand"
+2290,08/20/2010 12:00:00 AM,30.6509,79.0264,downpour,medium,0,"Gaurikund, road to Kedarnath, Garwhal division, Uttarakhand"
+5346,08/17/2013 12:00:00 AM,31.0343,78.7248,rain,medium,,"Harsil, Uttarakhand"
+3673,06/29/2011 12:00:00 AM,30.2416,78.8996,downpour,medium,0,"Rishikesh-Kedarnath national highway, Sirobagad"
+2389,09/04/2010 12:00:00 AM,30.5004,79.3888,downpour,medium,0,"Chhinka area(?), on Rishikesh-Badrinath hwy"
+1521,02/23/2010 12:00:00 AM,30.383,78.5094,downpour,medium,2,
+7110,04/30/2015 12:00:00 AM,30.5568,79.5541,continuous_rain,small,0,Rishikesh-Badrinath National Highway near Joshimath
+2162,07/29/2010 12:00:00 AM,30.4054,79.3426,downpour,medium,0,
+2452,09/19/2010 09:00:00 AM,30.1977,77.9137,downpour,medium,0,"near Mohand, Dehradun-Delhi hwy, Uttar Pradesh"
+5358,08/18/2013 12:00:00 AM,30.6639,78.0574,rain,medium,,Rishkesh-Yamunotri Highway
+4940,06/17/2013 12:00:00 AM,30.3069,78.0169,rain,medium,3,"Dehradun, Uttarakhand"
+2040,07/06/2010 12:00:00 AM,30.638,78.3297,downpour,medium,0,"highway to Uttarkashi district, Uttarakhand"
+6947,06/21/2015 12:00:00 AM,30.0261,78.6278,rain,small,0,Satpuli-Kanskhet Road in Pauri Garhwal district
+1130,09/01/2009 03:00:00 PM,29.7036,78.5658,downpour,medium,3,Chinona area in Almora district
+5209,07/26/2013 12:00:00 AM,30.6539,78.3366,rain,medium,,Rishikesh-Gangotri Highway Near Dharasu-Nalupani
+5178,07/24/2013 12:00:00 AM,30.4605,79.4774,continuous_rain,medium,2,"Chamoli, Uttarakhand"
+9008,07/16/2016 12:00:00 AM,30.3351,78.5113,rain,small,0,"Mathyali village, Jakhnidhar, Uttarakhand, India"
+5198,07/25/2013 12:00:00 AM,30.8928,78.48,continuous_rain,medium,0,"Quaritok, Uttarkashi, Uttarakhand"
+5347,08/17/2013 12:00:00 AM,30.7292,78.4396,rain,medium,,"Uttarkashi, Uttarakhand"
+3737,07/06/2011 12:00:00 AM,30.3214,78.0319,downpour,medium,0,"Gangortri-Rishikesh highway, at Narendranagar in Tehri district of Uttarakhand"
+5176,07/23/2013 12:00:00 AM,30.1944,79.1939,downpour,medium,0,"Deval, Chamoli District, Uttarakhand"
+4943,06/17/2013 12:00:00 AM,29.5987,79.6592,downpour,medium,4,"Almora, Uttarakhand"
+2443,09/18/2010 12:00:00 AM,29.6042,79.5343,downpour,large,24,"villages Pilkha(?), Devali(?), and Balta(?), Avalbagh block(?), Almora(Almorah) district, Uttarakhand"
+5365,08/19/2013 11:00:00 PM,30.6293,78.3303,downpour,medium,,"Nalupani Area Of Uttarkashi District, Uttarakhand"
+2294,08/20/2010 12:00:00 AM,30.3846,78.8371,downpour,medium,0,"Lambagad(?), Rishikesh-Badrinath highway, Uttarakhand"
+2309,08/22/2010 12:00:00 AM,30.4238,79.6724,downpour,medium,0,"Chandoli(?) and Karchuna(?) vilalges, Pokkhri, Chamoli, Uttarakhand, Uttranchal"
+2378,09/03/2010 12:00:00 AM,30.135,78.3896,downpour,medium,0,"Shivpuri, Rishikesh-Badrinath hwy"
+2440,09/17/2010 12:00:00 AM,30.75402442,79.49970189,downpour,very_large,,"Maletha village, near Badrinath"
+2476,09/20/2010 12:00:00 AM,29.3987,79.4841,downpour,medium,0,"NH-87 near Naintital, Uttarakhand"
+7308,08/15/2015 12:00:00 AM,30.9111,78.6814,continuous_rain,medium,0,Gagnani
+2103,07/20/2010 12:00:00 AM,29.9862,78.6115,downpour,medium,0,"Badrinath and Yamunotri shrines(?), Garhwal region, Uttarakhand"
+4974,06/24/2013 03:00:00 PM,30.4091,79.0579,rain,medium,0,"Between Rudaprayag And Guptkashi, Uttarakhand (2 Landslides)"
+2268,08/18/2010 08:30:00 AM,30.0134,79.9261,downpour,large,18,"Saraswati Shishu Mandir school(?), Sumgarh(Sumgad) village(?), Bageshwar-Pindari glacier rd 45 km from Bageshwar, Kapkot, Bageshwar, Uttarakhand"
+3670,06/29/2011 12:00:00 AM,30.67629482,79.04191791,downpour,medium,,National highway leading to Kedarnath
+2257,08/16/2010 12:00:00 AM,30.7284,79.4971,downpour,medium,0,"badrinath route, Lambagarh(?), Uttarakhand"
+7296,07/24/2015 12:00:00 AM,30.416,78.3415,continuous_rain,medium,0,Kempty Road near Kandikhal
+3578,06/07/2011 09:00:00 AM,30.2414,78.908,downpour,medium,0,"Rishikesh-Badrinath hwy., near Sirobgarh(Sirobagad), Rudraprayag district, Uttarakhand"
+7297,07/28/2015 12:00:00 AM,30.7204,79.0758,continuous_rain,small,0,Kedarnath Yatra
+7270,07/24/2015 12:00:00 AM,29.5863,80.2186,continuous_rain,small,0,Pithoragarh
+3859,07/29/2011 12:00:00 AM,30.012,78.197,downpour,medium,0,Kedarnath yatra
+2456,09/19/2010 12:00:00 AM,30.7991,79.4356,downpour,medium,0,"near Bagri Glacier(?), Gopeswar(Gopeshwar), Chamoli district, Uttarakhand"
+9448,08/05/2016 11:00:00 PM,29.5866,80.2154,downpour,small,1,Bangapani area of Pithoragarh
+3577,06/07/2011 12:00:00 AM,30.5319,79.3541,downpour,medium,0,"road to Badrinath shrine, Uttarakhand"
+5241,07/31/2013 08:00:00 AM,29.5952,79.6625,downpour,medium,,"Salut, Almora, Uttarakhand"
+4472,08/14/2012 12:00:00 AM,30.7362,78.44,downpour,medium,,"Uttarkashi, Uttarakhand,"
+7224,07/19/2015 12:00:00 AM,30.73,78.4378,continuous_rain,medium,0,"Varunavat Mountain, Uttarkashi"
+8032,06/29/2016 12:00:00 AM,30.3299,79.3206,downpour,medium,0,"Nandprayag, Uttarakhand, India"
+7294,07/24/2015 12:00:00 AM,30.4528,78.1045,continuous_rain,small,0,Kempty Road near Kempty Falls
