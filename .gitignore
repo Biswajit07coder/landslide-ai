@@ -11,3 +11,7 @@ backend/app.db
 # Virtual environments
 .venv/
 env/
+
+# Ignore mobile app service worker and local env used by fcm-token-tool
+mobapp/fcm-token-tool/firebase-messaging-sw.js
+mobapp/fcm-token-tool/.env

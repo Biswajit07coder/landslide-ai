@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FCM Token Grabber</title>
+  </head>
+  <body>
+    <button id="getTokenBtn">Get Notification Token</button>
+
+    <p id="status"></p>
+    <textarea id="tokenOutput" rows="8" cols="100" readonly></textarea>
+
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-messaging-compat.js"></script>
+    <script>
+      function parseDotEnv(text) {
+        const result = {};
+        const lines = text.split(/\r?\n/);
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed || trimmed.startsWith("#")) {
+            continue;
+          }
+
+          const eqIndex = trimmed.indexOf("=");
+          if (eqIndex === -1) {
+            continue;
+          }
+
+          const key = trimmed.slice(0, eqIndex).trim();
+          let value = trimmed.slice(eqIndex + 1).trim();
+
+          if (
+            (value.startsWith('"') && value.endsWith('"')) ||
+            (value.startsWith("'") && value.endsWith("'"))
+          ) {
+            value = value.slice(1, -1);
+          }
+
+          result[key] = value;
+        }
+
+        return result;
+      }
+
+      async function loadFirebaseConfigFromEnv() {
+        const response = await fetch("./.env", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error("Could not load .env file.");
+        }
+
+        const envText = await response.text();
+        const env = parseDotEnv(envText);
+
+        const firebaseConfig = {
+          apiKey: env.FIREBASE_API_KEY,
+          authDomain: env.FIREBASE_AUTH_DOMAIN,
+          projectId: env.FIREBASE_PROJECT_ID,
+          messagingSenderId: env.FIREBASE_MESSAGING_SENDER_ID,
+          appId: env.FIREBASE_APP_ID,
+        };
+
+        const vapidKey = env.FIREBASE_VAPID_KEY;
+
+        if (
+          !firebaseConfig.apiKey ||
+          !firebaseConfig.authDomain ||
+          !firebaseConfig.projectId ||
+          !firebaseConfig.messagingSenderId ||
+          !firebaseConfig.appId ||
+          !vapidKey
+        ) {
+          throw new Error("Missing one or more FIREBASE_* values in .env.");
+        }
+
+        return { firebaseConfig, vapidKey };
+      }
+
+      const statusEl = document.getElementById("status");
+      const tokenOutputEl = document.getElementById("tokenOutput");
+      const buttonEl = document.getElementById("getTokenBtn");
+
+      function showError(message) {
+        statusEl.textContent = "Error: " + message;
+        tokenOutputEl.value = "";
+      }
+
+      buttonEl.addEventListener("click", async () => {
+        statusEl.textContent = "";
+        tokenOutputEl.value = "";
+
+        try {
+          const permission = await Notification.requestPermission();
+          if (permission !== "granted") {
+            showError("Notification permission was not granted.");
+            return;
+          }
+
+          const { firebaseConfig, vapidKey } =
+            await loadFirebaseConfigFromEnv();
+
+          firebase.initializeApp(firebaseConfig);
+          const messaging = firebase.messaging();
+
+          const registration = await navigator.serviceWorker.register(
+            "./firebase-messaging-sw.js",
+          );
+
+          const token = await messaging.getToken({
+            vapidKey,
+            serviceWorkerRegistration: registration,
+          });
+
+          if (!token) {
+            showError("No token returned by Firebase Messaging.");
+            return;
+          }
+
+          statusEl.textContent = "Token retrieved successfully:";
+          tokenOutputEl.value = token;
+        } catch (error) {
+          showError(error && error.message ? error.message : String(error));
+        }
+      });
+    </script>
+  </body>
+</html>
