@@ -1,5 +1,7 @@
 import os
 import logging
+import db
+from firebase_admin import exceptions as firebase_exceptions
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(name)s: %(message)s')
 
@@ -77,6 +79,22 @@ def send_push(device_token: str, title: str, body: str) -> bool:
         resp = messaging.send(message)
         logging.info("FCM send OK: %s", resp)
         return True
-    except Exception:
-        logging.exception("Failed to send FCM message")
+    except Exception as e:
+        # Handle common firebase-admin exceptions with more detail
+        try:
+            # Unregistered token — remove from DB so we don't spam future sends
+            if isinstance(e, firebase_exceptions.UnregisteredError) or (
+                hasattr(e, 'code') and str(e.code).lower().find('unregistered') != -1
+            ):
+                logging.warning("FCM UnregisteredError for token; removing token from DB: %s", device_token)
+                try:
+                    deleted = db.delete_location_by_device_token(device_token)
+                    logging.info("Deleted %d rows for token %s", deleted, device_token)
+                except Exception:
+                    logging.exception("Failed to delete unregistered device token from DB")
+                return False
+        except Exception:
+            pass
+
+        logging.exception("Failed to send FCM message: %s", e)
         return False

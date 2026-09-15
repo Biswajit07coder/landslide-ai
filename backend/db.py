@@ -62,4 +62,15 @@ def list_locations() -> List[Dict]:
     return [dict(r) for r in rows]
 
 
+def delete_location_by_device_token(device_token: str) -> int:
+    """Delete locations matching the given device_token. Returns number of rows deleted."""
+    conn = get_conn()
+    cur = conn.cursor()
+    cur.execute("DELETE FROM locations WHERE device_token = ?", (device_token,))
+    deleted = cur.rowcount
+    conn.commit()
+    conn.close()
+    return deleted
+
+
 init_db()
