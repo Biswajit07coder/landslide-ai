@@ -4,12 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FCM Token Grabber</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <button id="getTokenBtn">Get Notification Token</button>
+    <main class="container">
+      <h1 class="title">FCM Token & Register</h1>
 
-    <p id="status"></p>
-    <textarea id="tokenOutput" rows="8" cols="100" readonly></textarea>
+      <div class="card">
+        <label for="locationName">Location Name</label>
+        <input id="locationName" type="text" placeholder="Home, Office, etc." />
+
+        <div class="row">
+          <button id="useLocationBtn" class="btn secondary">
+            Use My Location
+          </button>
+          <div class="coords">
+            <input id="latitude" type="text" placeholder="Latitude" readonly />
+            <input
+              id="longitude"
+              type="text"
+              placeholder="Longitude"
+              readonly
+            />
+          </div>
+        </div>
+
+        <button id="getTokenBtn" class="btn primary">
+          Get Token & Register
+        </button>
+
+        <p id="status" class="status"></p>
+
+        <label for="tokenOutput" class="token-label"
+          ><strong>Your FCM Token (keep private)</strong></label
+        >
+        <textarea id="tokenOutput" rows="4" cols="66" readonly></textarea>
+        <div class="token-actions">
+          <button id="copyTokenBtn" class="btn" style="display: none">
+            Copy token
+          </button>
+          <button id="revealToken" class="btn ghost" style="display: none">
+            Hide token
+          </button>
+        </div>
+      </div>
+    </main>
 
     <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-messaging-compat.js"></script>
@@ -75,16 +114,89 @@
           throw new Error("Missing one or more FIREBASE_* values in .env.");
         }
 
-        return { firebaseConfig, vapidKey };
+        return { firebaseConfig, vapidKey, backendUrl: env.BACKEND_URL };
       }
 
       const statusEl = document.getElementById("status");
       const tokenOutputEl = document.getElementById("tokenOutput");
       const buttonEl = document.getElementById("getTokenBtn");
+      const useLocationBtn = document.getElementById("useLocationBtn");
+      const locationNameEl = document.getElementById("locationName");
+      const latEl = document.getElementById("latitude");
+      const lonEl = document.getElementById("longitude");
+      const revealBtn = document.getElementById("revealToken");
 
       function showError(message) {
         statusEl.textContent = "Error: " + message;
         tokenOutputEl.value = "";
+      }
+      // Attempt to fetch config from the backend first (when the demo is
+      // served via the backend e.g. https://<ngrok-id>/demo/). This allows the
+      // demo to be opened on a phone via the backend URL without copying any
+      // config into the static files.
+      async function loadConfig() {
+        try {
+          const resp = await fetch("/demo/config", { cache: "no-store" });
+          if (resp.ok) {
+            const json = await resp.json();
+            if (json && json.firebaseConfig && json.vapidKey) {
+              return {
+                firebaseConfig: json.firebaseConfig,
+                vapidKey: json.vapidKey,
+                backendUrl: json.backendUrl,
+              };
+            }
+          }
+        } catch (e) {
+          // ignore and fall back to local .env
+        }
+        return await loadFirebaseConfigFromEnv();
+      }
+
+      useLocationBtn.addEventListener("click", async () => {
+        statusEl.textContent = "Getting location...";
+        try {
+          await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                const lat = pos.coords.latitude.toFixed(6);
+                const lon = pos.coords.longitude.toFixed(6);
+                latEl.value = lat;
+                lonEl.value = lon;
+                latEl.style.display = "inline-block";
+                lonEl.style.display = "inline-block";
+                statusEl.textContent = "Location filled.";
+                resolve();
+              },
+              (err) => {
+                reject(err);
+              },
+              { enableHighAccuracy: true, timeout: 10000 },
+            );
+          });
+        } catch (e) {
+          statusEl.textContent =
+            "Could not get location: " + (e && e.message ? e.message : e);
+        }
+      });
+
+      // token box visible but copy button hidden until we have a token
+      const copyBtn = document.getElementById("copyTokenBtn");
+      tokenOutputEl.style.display = "block";
+      if (revealBtn) {
+        revealBtn.style.display = "none";
+      }
+      if (copyBtn) {
+        copyBtn.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(tokenOutputEl.value || "");
+            statusEl.textContent = "Token copied to clipboard.";
+          } catch (e) {
+            // fallback: select and prompt
+            tokenOutputEl.select();
+            statusEl.textContent = "Token selected — use Cmd/Ctrl+C to copy.";
+          }
+        });
       }
 
       buttonEl.addEventListener("click", async () => {
@@ -98,8 +210,7 @@
             return;
           }
 
-          const { firebaseConfig, vapidKey } =
-            await loadFirebaseConfigFromEnv();
+          const { firebaseConfig, vapidKey, backendUrl } = await loadConfig();
 
           firebase.initializeApp(firebaseConfig);
           const messaging = firebase.messaging();
@@ -118,8 +229,49 @@
             return;
           }
 
-          statusEl.textContent = "Token retrieved successfully:";
+          // Attempt to register the token with the backend
+          const locationName = locationNameEl.value || "Browser Demo";
+          const latitude = latEl.value ? parseFloat(latEl.value) : null;
+          const longitude = lonEl.value ? parseFloat(lonEl.value) : null;
+
+          const payload = {
+            location_name: locationName,
+            latitude: latitude || 0.0,
+            longitude: longitude || 0.0,
+            device_token: token,
+          };
+
+          const backendTarget = backendUrl || window.location.origin;
+          const registerUrl =
+            backendTarget.replace(/\/$/, "") + "/locations/register";
+
+          const resp = await fetch(registerUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          if (!resp.ok) {
+            if (resp.status === 501) {
+              showError(
+                "Registration failed: server returned 501 Unsupported method.\n" +
+                  "This usually means the demo page is being served by a static server (python -m http.server) which cannot proxy POSTs.\n" +
+                  "Fix: either run the backend (from the repo 'backend' folder: ../.venv/bin/uvicorn main:app --reload --port 8001),\n" +
+                  "or serve the demo via the backend/ngrok URL so /demo/config is available.",
+              );
+            } else {
+              const txt = await resp.text();
+              showError("Registration failed: " + txt);
+            }
+            return;
+          }
+
+          const json = await resp.json();
+          statusEl.textContent =
+            "Registered! Location ID: " + (json.id || json["id"]);
           tokenOutputEl.value = token;
+          if (copyBtn) copyBtn.style.display = "inline-block";
+          if (revealBtn) revealBtn.style.display = "none";
         } catch (error) {
           showError(error && error.message ? error.message : String(error));
         }

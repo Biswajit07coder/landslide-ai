@@ -1,4 +1,6 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, List, Dict
 import logging
@@ -14,6 +16,67 @@ import os
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(name)s: %(message)s')
 
 app = FastAPI(title="Landslide Risk Prototype")
+
+# Allow CORS during development so the demo page can be served from a
+# separate static server or ngrok and still call the backend endpoints.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Serve the lightweight FCM token tool as static files at /demo
+static_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "mobapp", "fcm-token-tool"))
+if os.path.isdir(static_dir):
+    app.mount("/demo", StaticFiles(directory=static_dir, html=True), name="demo")
+
+
+@app.get("/demo/config")
+def demo_config(request: Request):
+    """Return the public Firebase config and VAPID key for the demo tool.
+
+    This reads the `mobapp/fcm-token-tool/.env` file (if present) and exposes
+    only the public Firebase config and VAPID key. The `backendUrl` is
+    derived from the incoming request so the demo can POST back to the same
+    backend (useful when the backend is exposed via ngrok).
+    """
+    env_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "mobapp", "fcm-token-tool", ".env"))
+    env = {}
+    if os.path.exists(env_path):
+        try:
+            with open(env_path, "r", encoding="utf-8") as fh:
+                for line in fh:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    if "=" not in line:
+                        continue
+                    k, v = line.split("=", 1)
+                    k = k.strip()
+                    v = v.strip()
+                    if (v.startswith('"') and v.endswith('"')) or (v.startswith("'") and v.endswith("'")):
+                        v = v[1:-1]
+                    env[k] = v
+        except Exception:
+            pass
+
+    firebaseConfig = None
+    vapidKey = None
+    if env:
+        firebaseConfig = {
+            "apiKey": env.get("FIREBASE_API_KEY"),
+            "authDomain": env.get("FIREBASE_AUTH_DOMAIN"),
+            "projectId": env.get("FIREBASE_PROJECT_ID"),
+            "messagingSenderId": env.get("FIREBASE_MESSAGING_SENDER_ID"),
+            "appId": env.get("FIREBASE_APP_ID"),
+        }
+        vapidKey = env.get("FIREBASE_VAPID_KEY")
+
+    backend_url = os.environ.get("BACKEND_URL") or str(request.base_url).rstrip("/")
+
+    return {"firebaseConfig": firebaseConfig, "vapidKey": vapidKey, "backendUrl": backend_url}
 
 
 class LocationIn(BaseModel):

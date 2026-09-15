@@ -1,0 +1,21 @@
+/* Simple mobile-first styles for the demo token tool */
+:root{--bg:#f6f8fa;--card:#ffffff;--muted:#6b7280;--accent:#0ea5a4;--accent-2:#06b6d4;--danger:#ef4444;--radius:12px}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#111827;background:var(--bg);}
+.container{max-width:760px;margin:28px auto;padding:16px}
+.title{text-align:center;margin:8px 0 18px;font-size:1.4rem;color:#0f172a}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.06);padding:18px}
+label{display:block;font-size:0.85rem;margin-bottom:6px;color:var(--muted)}
+input[type=text],textarea{width:100%;padding:10px 12px;border:1px solid #e6edf0;border-radius:8px;font-size:1rem;box-sizing:border-box}
+.coords{display:flex;gap:8px;margin-top:8px}
+.coords input{flex:1}
+.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:8px 0}
+.btn{padding:10px 14px;border-radius:10px;border:none;background:#e6eef0;color:#0f172a;font-weight:600;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+.btn.secondary{background:#f1f5f9;color:#0f172a}
+.btn.ghost{background:transparent;border:1px solid #e6edf0}
+.btn:active{transform:translateY(1px)}
+.status{min-height:20px;margin:12px 0;color:var(--muted)}
+.token-label{margin-top:12px}
+textarea#tokenOutput{font-family:monospace;background:#f8fafb;border:1px solid #e6edf0}
+.token-actions{display:flex;gap:8px;margin-top:8px}
+@media (max-width:520px){.container{margin:12px;padding:12px}.title{font-size:1.2rem}.coords{flex-direction:column}.row{gap:8px}}
